@@ -55,9 +55,8 @@ async function runServer() {
   });
 }
 
-declare var __non_webpack_require__: any | undefined;
-const { main } = __non_webpack_require__ || require;
-if (main.filename === __filename || main === module) {
+declare var __non_webpack_require__: any;
+if (__non_webpack_require__.main.filename === __filename) {
   runServer();
 }
 
