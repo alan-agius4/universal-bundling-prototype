@@ -126,7 +126,7 @@
           "builder": "@angular-devkit/build-angular:server",
           "options": {
             "outputPath": "dist/server",
-            "main": "src/main.server.ts",
+            "main": "server.ts",
             "tsConfig": "tsconfig.server.json",
             "bundleDependencies": "all"
           },
@@ -143,6 +143,20 @@
                 "scripts": false,
                 "styles": true
               }
+            }
+          }
+        },
+        "app-shell": {
+          "builder": "@angular-devkit/build-angular:app-shell",
+          "options": {
+            "browserTarget": "universal-bundling-prototype:build",
+            "serverTarget": "universal-bundling-prototype:server",
+            "route": "shell"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "universal-bundling-prototype:build:production",
+              "serverTarget": "universal-bundling-prototype:server:production"
             }
           }
         }
