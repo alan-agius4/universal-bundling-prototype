@@ -21,7 +21,7 @@ import * as express from 'express';
 import { join } from 'path';
 
 import { ngExpressEngine } from '@nguniversal/express-engine';
-import { AppServerModule } from './src/main.server';
+import { AppServerModuleNgFactory } from './src/main.server';
 
 // Express server
 async function runServer() {
@@ -31,7 +31,7 @@ async function runServer() {
   const DIST_FOLDER = join(process.cwd(), 'dist/browser');
 
   app.engine('html', ngExpressEngine({
-    bootstrap: AppServerModule,
+    bootstrap: AppServerModuleNgFactory,
   }));
 
   app.set('view engine', 'html');
