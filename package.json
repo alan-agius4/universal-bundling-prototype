@@ -11,6 +11,7 @@
     "postinstall": "cp app-shell-builder.patch node_modules/@angular-devkit/build-angular/src/app-shell/index.js",
     "serve:ssr": "node dist/server/main.js",
     "build:ssr": "npm run build:client-and-server-bundles",
+    "build:app-shell": "npm run ng run universal-bundling-prototype:app-shell",
     "build:client-and-server-bundles": "ng build --prod && ng run universal-bundling-prototype:server:production"
   },
   "private": true,
